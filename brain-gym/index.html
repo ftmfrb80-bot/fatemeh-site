@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brain Gym — BrainPing | Short Games to Train Your Brain</title>
-<meta name="description" content="BrainPing Brain Gym: three short games to train your memory, attention and reaction time — number memory, the Stroop test, and a reaction test. Free, no sign-up, best scores saved in your browser.">
+<meta name="description" content="BrainPing Brain Gym: six short games to train your memory, attention, logic and reaction time — number memory, picture memory, the Stroop test, Sudoku, N-Back and a reaction test. Free, no sign-up, best scores saved in your browser.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Fatemeh Faryabi">
 <meta name="theme-color" content="#010102">
@@ -14,12 +14,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BrainPing">
 <meta property="og:title" content="Brain Gym — BrainPing | Short Games to Train Your Brain">
-<meta property="og:description" content="Three short games to train your memory, attention and reaction time. Free, no sign-up — your best scores stay in your browser.">
+<meta property="og:description" content="Six short games to train your memory, attention, logic and reaction time. Free, no sign-up — your best scores stay in your browser.">
 <meta property="og:url" content="https://brainping.me/brain-gym/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Brain Gym — BrainPing | Short Games to Train Your Brain">
-<meta name="twitter:description" content="Three short games to train your memory, attention and reaction time. Free, no sign-up — your best scores stay in your browser.">
+<meta name="twitter:description" content="Six short games to train your memory, attention, logic and reaction time. Free, no sign-up — your best scores stay in your browser.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://brainping.me/brain-gym/","url":"https://brainping.me/brain-gym/","name":"Brain Gym — BrainPing","description":"Three short games to train memory, attention and reaction time.","isPartOf":{"@id":"https://brainping.me/#website"}}
 </script>
@@ -84,6 +84,20 @@
   .react-pad{cursor:pointer;user-select:none;-webkit-user-select:none;min-height:120px;display:flex;align-items:center;justify-content:center;font:16px/1.6 var(--px);color:#fff}
   .react-pad.wait{background:#3a1220;border:2px solid #ff7a7a}
   .react-pad.ready{background:#0d3d24;border:2px solid var(--m)}
+  .mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+  .mem-card{aspect-ratio:1;background:var(--s);border:2px solid var(--l);cursor:pointer;font-size:0;display:flex;align-items:center;justify-content:center;padding:0}
+  .mem-card.open,.mem-card.done{background:var(--s2);border-color:var(--v);font-size:26px}
+  .mem-card.done{border-color:var(--m)}
+  .sudoku{display:grid;grid-template-columns:repeat(6,1fr);margin:14px auto 0;max-width:300px;border:2px solid var(--v)}
+  .sudoku button{aspect-ratio:1;background:var(--bg);border:1px solid var(--l);color:#fff;font:14px var(--px);cursor:pointer;padding:0}
+  .sudoku button:nth-child(3n){border-right:2px solid var(--v)}
+  .sudoku button:nth-child(n+7):nth-child(-n+12),.sudoku button:nth-child(n+19):nth-child(-n+24){border-bottom:2px solid var(--v)}
+  .sudoku button.given{color:var(--mu);cursor:default}
+  .sudoku button.sel{background:var(--s2);outline:2px solid var(--m);outline-offset:-2px}
+  .sudoku button.err{color:#ff7a7a}
+  .num-pad{display:flex;gap:6px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  .num-pad .btn{flex:0 0 auto;padding:10px 12px}
+  .nback-display{font-size:44px}
   .crumb{font:9px var(--px);color:var(--mu);margin:0 0 14px}
   .crumb a{color:var(--v)}
   .page-title{font:13px/1.6 var(--px);margin:0 0 6px;color:var(--m)}
@@ -125,7 +139,7 @@
     <div class="win"><div class="win-t"><span>C:\BRAINPING\BRAIN_GYM.EXE</span><span>_ □ ×</span></div>
       <div class="win-b">
         <h1>Train your brain<span class="cur"></span></h1>
-        <p class="mu" style="margin:0">Three short games, two minutes each. No sign-up, no leaderboard against strangers — just you against your own best score. Your best results are saved in your browser, so you can come back tomorrow and beat them.</p>
+        <p class="mu" style="margin:0">Six short games, two minutes each. No sign-up, no leaderboard against strangers — just you against your own best score. Your best results are saved in your browser, so you can come back tomorrow and beat them.</p>
         <p class="mu" style="margin:10px 0 0">Each game trains something real, and each one tells you the science behind it. That is the whole point of BrainPing: play a little, understand a little more.</p>
       </div>
     </div>
@@ -185,6 +199,68 @@
           <div class="game-score" id="react-score">ROUND: — &nbsp;·&nbsp; AVG: —</div>
         </div>
         <p class="science"><b>Why it matters:</b> reaction time reflects how fast your brain turns a signal into an action. It slows down with tiredness and distraction — so if your time is worse than usual today, that is data: your brain is asking for sleep, not for more coffee.</p>
+      </div></section>
+
+      <!-- GAME 4: PICTURE MEMORY -->
+      <section class="win"><div class="win-t"><span>PIC_MEM.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>VISUAL MEMORY</span><span id="pic-best">BEST: —</span></div>
+        <h3>Picture Memory</h3>
+        <p class="mu">Sixteen face-down cards, eight matching pairs. Flip two at a time and remember where each picture hides. Fewer moves is better.</p>
+        <div class="game-box">
+          <div class="mem-grid" id="pic-grid"></div>
+          <div class="game-msg" id="pic-msg">Press START to shuffle the cards.</div>
+          <div class="game-controls">
+            <button class="btn go" id="pic-start" type="button">START &gt;</button>
+          </div>
+          <div class="game-score" id="pic-score">MOVES: — &nbsp;·&nbsp; PAIRS: 0/8</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> this trains visual working memory — remembering what you saw and where it was. It is the same skill you use to find your way back to a shop in a mall, or to remember which tab had that article you were reading.</p>
+      </div></section>
+
+      <!-- GAME 5: SUDOKU 6x6 -->
+      <section class="win"><div class="win-t"><span>SUDOKU.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>LOGIC</span><span id="sud-best">BEST: —</span></div>
+        <h3>Sudoku 6×6</h3>
+        <p class="mu">Fill the grid so every row, every column and every 2×3 box contains the numbers 1–6 exactly once. A gentle mini-Sudoku — perfect for a coffee break. Tap a cell, then a number.</p>
+        <div class="game-box">
+          <div class="sudoku" id="sud-grid"></div>
+          <div class="num-pad" id="sud-pad">
+            <button class="btn" type="button" data-n="1">1</button>
+            <button class="btn" type="button" data-n="2">2</button>
+            <button class="btn" type="button" data-n="3">3</button>
+            <button class="btn" type="button" data-n="4">4</button>
+            <button class="btn" type="button" data-n="5">5</button>
+            <button class="btn" type="button" data-n="6">6</button>
+            <button class="btn" type="button" data-n="0">⌫</button>
+          </div>
+          <div class="game-msg" id="sud-msg">Press NEW PUZZLE to start. Every puzzle has exactly one solution.</div>
+          <div class="game-controls">
+            <button class="btn go" id="sud-new" type="button">NEW PUZZLE &gt;</button>
+            <button class="btn" id="sud-check" type="button" disabled>CHECK</button>
+          </div>
+          <div class="game-score" id="sud-score">TIME: —</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> Sudoku is pure logical deduction — no maths, just "if this, then that". It trains the same step-by-step reasoning you use to debug a problem, plan a project, or untangle a schedule clash.</p>
+      </div></section>
+
+      <!-- GAME 6: N-BACK -->
+      <section class="win"><div class="win-t"><span>NBACK.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>WORKING MEMORY</span><span id="nb-best">BEST: —</span></div>
+        <h3>N-Back · 2-Back</h3>
+        <p class="mu">Letters appear one by one. Press <b style="color:var(--t)">MATCH</b> when the letter is the same as the one two steps back — otherwise press <b style="color:var(--t)">NO MATCH</b>. 20 letters. This is the task researchers use to study working memory.</p>
+        <div class="game-box">
+          <div class="game-display nback-display" id="nb-display">READY?</div>
+          <div class="game-msg" id="nb-msg">Press START. 20 letters, one every 2 seconds.</div>
+          <div class="game-controls">
+            <button class="btn go" id="nb-match" type="button" disabled>MATCH</button>
+            <button class="btn" id="nb-nomatch" type="button" disabled>NO MATCH</button>
+          </div>
+          <div class="game-controls">
+            <button class="btn go" id="nb-start" type="button">START &gt;</button>
+          </div>
+          <div class="game-score" id="nb-score">LETTER: — &nbsp;·&nbsp; CORRECT: —</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> the N-Back is the classic working-memory task in cognitive science — it forces your brain to hold information and update it constantly, like keeping a conversation in mind while you look something up. Honest note: whether training it makes you smarter in general is still debated by researchers.</p>
       </div></section>
     </div>
 
@@ -383,6 +459,276 @@
       }
     }
   });
+  /* ---------- GAME 4: PICTURE MEMORY ---------- */
+  var PIC_EMOJIS = ["🐱", "🍓", "🌙", "⭐", "🎵", "🌈", "⚡", "🍫"];
+  var picDeck = [], picOpen = [], picLock = false, picMoves = 0, picMatched = 0;
+  var picBest = parseInt(storeGet("bp_picmem_best") || "0", 10) || 0;
+  if (picBest > 0) setText("pic-best", "BEST: " + picBest + " MOVES");
+  function picShuffle(arr){
+    for (var i = arr.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+  function picBuild(){
+    picDeck = picShuffle(PIC_EMOJIS.concat(PIC_EMOJIS));
+    picOpen = []; picLock = false; picMoves = 0; picMatched = 0;
+    var grid = document.getElementById("pic-grid");
+    grid.innerHTML = "";
+    picDeck.forEach(function(emoji, idx){
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "mem-card";
+      btn.textContent = emoji;
+      btn.setAttribute("aria-label", "card " + (idx + 1));
+      btn.addEventListener("click", function(){ picFlip(btn, idx); });
+      grid.appendChild(btn);
+    });
+    setText("pic-score", "MOVES: 0 · PAIRS: 0/8");
+    setMsg("pic-msg", "Flip two cards. Find all 8 pairs.");
+  }
+  function picFlip(btn, idx){
+    if (picLock || btn.classList.contains("open") || btn.classList.contains("done")) return;
+    btn.classList.add("open");
+    picOpen.push({ btn: btn, emoji: picDeck[idx] });
+    if (picOpen.length === 2){
+      picMoves++;
+      setText("pic-score", "MOVES: " + picMoves + " · PAIRS: " + (picMatched / 2) + "/8");
+      if (picOpen[0].emoji === picOpen[1].emoji){
+        picOpen[0].btn.classList.add("done");
+        picOpen[1].btn.classList.add("done");
+        picMatched += 2;
+        picOpen = [];
+        setText("pic-score", "MOVES: " + picMoves + " · PAIRS: " + (picMatched / 2) + "/8");
+        if (picMatched === 16){
+          setMsg("pic-msg", "All 8 pairs in " + picMoves + " moves! Press START to shuffle again.", "good");
+          if (picBest === 0 || picMoves < picBest){
+            picBest = picMoves;
+            storeSet("bp_picmem_best", picBest);
+            setText("pic-best", "BEST: " + picBest + " MOVES");
+          }
+        } else {
+          setMsg("pic-msg", "A pair! Keep going.", "good");
+        }
+      } else {
+        picLock = true;
+        var a = picOpen[0].btn, b = picOpen[1].btn;
+        picOpen = [];
+        setTimeout(function(){
+          a.classList.remove("open");
+          b.classList.remove("open");
+          picLock = false;
+        }, 900);
+      }
+    }
+  }
+  document.getElementById("pic-start").addEventListener("click", picBuild);
+  picBuild();
+
+  /* ---------- GAME 5: SUDOKU 6x6 ---------- */
+  var sudPuzzle = null, sudGiven = null, sudSel = -1, sudTimer = null, sudStart = 0, sudDone = false;
+  var sudBest = parseInt(storeGet("bp_sud_best") || "0", 10) || 0;
+  if (sudBest > 0) setText("sud-best", "BEST: " + sudBest + "S");
+  function sudValid(grid, r, c, n){
+    for (var i = 0; i < 6; i++){
+      if (grid[r][i] === n || grid[i][c] === n) return false;
+    }
+    var br = r - (r % 2), bc = c - (c % 3);
+    for (var rr = 0; rr < 2; rr++) for (var cc = 0; cc < 3; cc++)
+      if (grid[br + rr][bc + cc] === n) return false;
+    return true;
+  }
+  function sudFill(grid){
+    for (var r = 0; r < 6; r++) for (var c = 0; c < 6; c++){
+      if (grid[r][c] !== 0) continue;
+      var nums = [1, 2, 3, 4, 5, 6].sort(function(){ return Math.random() - 0.5; });
+      for (var k = 0; k < nums.length; k++){
+        if (sudValid(grid, r, c, nums[k])){
+          grid[r][c] = nums[k];
+          if (sudFill(grid)) return true;
+          grid[r][c] = 0;
+        }
+      }
+      return false;
+    }
+    return true;
+  }
+  function sudCount(grid, limit){
+    for (var r = 0; r < 6; r++) for (var c = 0; c < 6; c++){
+      if (grid[r][c] !== 0) continue;
+      var total = 0;
+      for (var n = 1; n <= 6; n++){
+        if (sudValid(grid, r, c, n)){
+          grid[r][c] = n;
+          total += sudCount(grid, limit - total);
+          grid[r][c] = 0;
+          if (total >= limit) return total;
+        }
+      }
+      return total;
+    }
+    return 1;
+  }
+  function sudEmpty(){
+    var g = [];
+    for (var i = 0; i < 6; i++) g.push([0, 0, 0, 0, 0, 0]);
+    return g;
+  }
+  function sudNew(){
+    var full = sudEmpty();
+    sudFill(full);
+    var puzzle = full.map(function(row){ return row.slice(); });
+    var cells = [];
+    for (var i = 0; i < 36; i++) cells.push(i);
+    cells.sort(function(){ return Math.random() - 0.5; });
+    var givens = 36;
+    for (var k = 0; k < cells.length && givens > 14; k++){
+      var r = Math.floor(cells[k] / 6), c = cells[k] % 6;
+      var bak = puzzle[r][c];
+      puzzle[r][c] = 0;
+      var copy = puzzle.map(function(row){ return row.slice(); });
+      if (sudCount(copy, 2) !== 1) puzzle[r][c] = bak;
+      else givens--;
+    }
+    sudPuzzle = puzzle;
+    sudGiven = puzzle.map(function(row){ return row.map(function(v){ return v !== 0; }); });
+    sudSel = -1; sudDone = false;
+    sudRender();
+    document.getElementById("sud-check").disabled = false;
+    setMsg("sud-msg", "Tap a cell, then a number. Every puzzle has exactly one solution.");
+    clearInterval(sudTimer);
+    sudStart = Date.now();
+    setText("sud-score", "TIME: 0S");
+    sudTimer = setInterval(function(){
+      if (!sudDone) setText("sud-score", "TIME: " + Math.floor((Date.now() - sudStart) / 1000) + "S");
+    }, 1000);
+  }
+  function sudRender(){
+    var grid = document.getElementById("sud-grid");
+    grid.innerHTML = "";
+    for (var r = 0; r < 6; r++) for (var c = 0; c < 6; c++){
+      (function(r, c){
+        var btn = document.createElement("button");
+        btn.type = "button";
+        var v = sudPuzzle[r][c];
+        btn.textContent = v === 0 ? "" : String(v);
+        if (sudGiven[r][c]) btn.classList.add("given");
+        if (r * 6 + c === sudSel) btn.classList.add("sel");
+        btn.setAttribute("aria-label", "row " + (r + 1) + " column " + (c + 1));
+        btn.addEventListener("click", function(){
+          if (sudDone || sudGiven[r][c]) return;
+          sudSel = r * 6 + c;
+          var all = grid.querySelectorAll("button");
+          for (var i = 0; i < all.length; i++) all[i].classList.remove("sel");
+          btn.classList.add("sel");
+        });
+        grid.appendChild(btn);
+      })(r, c);
+    }
+  }
+  document.querySelectorAll("#sud-pad .btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (sudDone || sudSel < 0 || !sudPuzzle) return;
+      var r = Math.floor(sudSel / 6), c = sudSel % 6;
+      if (sudGiven[r][c]) return;
+      sudPuzzle[r][c] = parseInt(btn.getAttribute("data-n"), 10);
+      sudRender();
+    });
+  });
+  document.getElementById("sud-check").addEventListener("click", function(){
+    if (!sudPuzzle || sudDone) return;
+    var cells = document.getElementById("sud-grid").querySelectorAll("button");
+    var empty = false, bad = false;
+    for (var i = 0; i < 36; i++){
+      var r = Math.floor(i / 6), c = i % 6;
+      cells[i].classList.remove("err");
+      if (sudPuzzle[r][c] === 0){ empty = true; continue; }
+      var v = sudPuzzle[r][c];
+      sudPuzzle[r][c] = 0;
+      if (!sudValid(sudPuzzle, r, c, v)){ bad = true; cells[i].classList.add("err"); }
+      sudPuzzle[r][c] = v;
+    }
+    if (empty){ setMsg("sud-msg", "Some cells are still empty.", "bad"); return; }
+    if (bad){ setMsg("sud-msg", "Red cells break the rules — check the row, column or box.", "bad"); return; }
+    sudDone = true;
+    clearInterval(sudTimer);
+    var secs = Math.floor((Date.now() - sudStart) / 1000);
+    setText("sud-score", "TIME: " + secs + "S — SOLVED!");
+    setMsg("sud-msg", "Solved in " + secs + " seconds. Brilliant logic! Press NEW PUZZLE for another.", "good");
+    document.getElementById("sud-check").disabled = true;
+    if (sudBest === 0 || secs < sudBest){
+      sudBest = secs;
+      storeSet("bp_sud_best", sudBest);
+      setText("sud-best", "BEST: " + sudBest + "S");
+    }
+  });
+  document.getElementById("sud-new").addEventListener("click", sudNew);
+  sudNew();
+
+  /* ---------- GAME 6: N-BACK (2-BACK) ---------- */
+  var NB_LETTERS = ["B", "F", "K", "M", "Q", "T"];
+  var nbSeq = [], nbIdx = 0, nbCorrect = 0, nbActive = false, nbTimer = null, nbAnswered = false;
+  var nbBest = parseInt(storeGet("bp_nb_best") || "0", 10) || 0;
+  if (nbBest > 0) setText("nb-best", "BEST: " + nbBest + "/20");
+  function nbBuild(){
+    nbSeq = [];
+    for (var i = 0; i < 20; i++) nbSeq.push(NB_LETTERS[Math.floor(Math.random() * NB_LETTERS.length)]);
+    var targets = 0, tries = 0;
+    while (targets < 6 && tries < 200){
+      tries++;
+      var p = 2 + Math.floor(Math.random() * 18);
+      if (nbSeq[p] !== nbSeq[p - 2]){ nbSeq[p] = nbSeq[p - 2]; targets++; }
+    }
+  }
+  function nbShow(){
+    if (nbIdx >= 20){ nbEnd(); return; }
+    nbAnswered = false;
+    setText("nb-display", nbSeq[nbIdx]);
+    setText("nb-score", "LETTER: " + (nbIdx + 1) + "/20 · CORRECT: " + nbCorrect);
+    nbTimer = setTimeout(function(){
+      if (!nbAnswered) nbAnswer(false);
+      nbIdx++;
+      nbShow();
+    }, 2000);
+  }
+  function nbAnswer(isMatch){
+    if (!nbActive || nbAnswered) return;
+    nbAnswered = true;
+    var target = nbIdx >= 2 && nbSeq[nbIdx] === nbSeq[nbIdx - 2];
+    if (isMatch === target){
+      nbCorrect++;
+      setMsg("nb-msg", isMatch ? "Right — it matched!" : "Right — no match.", "good");
+    } else {
+      setMsg("nb-msg", target ? "That one WAS a match — it repeated the letter from 2 steps back." : "That one was not a match.", "bad");
+    }
+    setText("nb-score", "LETTER: " + (nbIdx + 1) + "/20 · CORRECT: " + nbCorrect);
+  }
+  function nbEnd(){
+    nbActive = false;
+    clearTimeout(nbTimer);
+    setText("nb-display", nbCorrect + " / 20");
+    setMsg("nb-msg", nbCorrect >= 17 ? "Excellent working memory! Press START to play again." : "Good effort — press START to try again.", nbCorrect >= 17 ? "good" : "");
+    setText("nb-score", "LETTER: 20/20 · CORRECT: " + nbCorrect);
+    document.getElementById("nb-match").disabled = true;
+    document.getElementById("nb-nomatch").disabled = true;
+    if (nbCorrect > nbBest){
+      nbBest = nbCorrect;
+      storeSet("bp_nb_best", nbBest);
+      setText("nb-best", "BEST: " + nbBest + "/20");
+    }
+  }
+  document.getElementById("nb-start").addEventListener("click", function(){
+    clearTimeout(nbTimer);
+    nbBuild();
+    nbIdx = 0; nbCorrect = 0; nbActive = true;
+    document.getElementById("nb-match").disabled = false;
+    document.getElementById("nb-nomatch").disabled = false;
+    setMsg("nb-msg", "Watch the letters. MATCH when it repeats the one from 2 steps back.");
+    nbShow();
+  });
+  document.getElementById("nb-match").addEventListener("click", function(){ nbAnswer(true); });
+  document.getElementById("nb-nomatch").addEventListener("click", function(){ nbAnswer(false); });
 })();
 </script>
 </body>
