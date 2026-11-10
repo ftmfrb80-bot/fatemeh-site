@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain Gym — BrainPing | Short Games to Train Your Brain</title>
+<meta name="description" content="BrainPing Brain Gym: three short games to train your memory, attention and reaction time — number memory, the Stroop test, and a reaction test. Free, no sign-up, best scores saved in your browser.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Fatemeh Faryabi">
+<meta name="theme-color" content="#010102">
+<link rel="canonical" href="https://brainping.me/brain-gym/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 14' shape-rendering='crispEdges'%3E%3Crect x='1' y='1' width='14' height='10' fill='%23AD96F1'/%3E%3Crect x='2' y='2' width='12' height='8' fill='%23010102'/%3E%3Crect x='3' y='3' width='5' height='1' fill='%2358F6B1'/%3E%3Crect x='3' y='5' width='8' height='1' fill='%23AD96F1'/%3E%3Crect x='6' y='11' width='4' height='1' fill='%23AD96F1'/%3E%3Crect x='4' y='12' width='8' height='1' fill='%2358F6B1'/%3E%3C/svg%3E">
+<link rel="sitemap" type="application/xml" href="../sitemap.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BrainPing">
+<meta property="og:title" content="Brain Gym — BrainPing | Short Games to Train Your Brain">
+<meta property="og:description" content="Three short games to train your memory, attention and reaction time. Free, no sign-up — your best scores stay in your browser.">
+<meta property="og:url" content="https://brainping.me/brain-gym/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Brain Gym — BrainPing | Short Games to Train Your Brain">
+<meta name="twitter:description" content="Three short games to train your memory, attention and reaction time. Free, no sign-up — your best scores stay in your browser.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://brainping.me/brain-gym/","url":"https://brainping.me/brain-gym/","name":"Brain Gym — BrainPing","description":"Three short games to train memory, attention and reaction time.","isPartOf":{"@id":"https://brainping.me/#website"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<style>
+  :root{--bg:#010102;--s:#0a0912;--s2:#13111f;--v:#AD96F1;--m:#58F6B1;--t:#ece9f6;--mu:#a59fba;--l:#241f3a;
+    --px:"Press Start 2P","Courier New",monospace;--f:"DejaVu Sans",Verdana,system-ui,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--t);font:15px/1.65 var(--f);
+    background-image:radial-gradient(rgba(173,150,241,.18) 1px,transparent 1.5px);background-size:22px 22px}
+  a{color:var(--m);text-decoration:none}
+  .wrap{max-width:940px;margin:0 auto;padding:20px 18px 56px}
+  .px{font-family:var(--px);line-height:1.6}
+  .bar-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--s);border:2px solid var(--v);box-shadow:4px 4px 0 var(--m)}
+  .logo{font-size:12px;color:var(--m)} .logo i{color:var(--v);font-style:normal}
+  nav{display:flex;gap:8px;flex-wrap:wrap}
+  nav a{font:10px var(--px);padding:9px 12px;color:var(--v);background:var(--s2);border:2px solid var(--l)}
+  nav a:hover{border-color:var(--m);color:var(--m)}
+  nav a.on{background:var(--v);color:var(--bg);border-color:var(--v)}
+  .page{margin-top:26px} .page[hidden]{display:none}
+  .win{background:var(--s);border:2px solid var(--v);box-shadow:6px 6px 0 rgba(88,246,177,.9);margin-bottom:26px}
+  .win-t{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--v),#7f68c9);color:var(--bg);padding:7px 10px;font:10px var(--px)}
+  .win-t span:last-child{letter-spacing:3px}
+  .win-b{padding:22px}
+  h1{font:20px/1.5 var(--px);margin:0 0 14px;color:#fff}
+  h2{font:13px/1.6 var(--px);margin:0 0 6px;color:var(--m)}
+  h3{margin:0 0 6px;font-size:16px;color:#fff}
+  .cur{display:inline-block;width:12px;height:20px;background:var(--m);vertical-align:-3px;animation:b 1s steps(2) infinite}
+  @keyframes b{50%{opacity:0}}
+  @media(prefers-reduced-motion:reduce){.cur{animation:none}}
+  .mu{color:var(--mu)}
+  .win-b p,.note{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .grid .win{margin:0}
+  .meta{display:flex;justify-content:space-between;gap:8px;font:9px var(--px);color:var(--mu);margin-bottom:12px}
+  .more{display:inline-block;margin-top:10px;font:10px var(--px);color:var(--m)} .more:hover{color:#fff}
+  .note{margin-top:26px;padding:14px 16px;border:2px dashed var(--v);font-size:13px;color:var(--mu)}
+  footer{text-align:center;margin-top:34px;font:9px/2 var(--px);color:var(--mu)}
+  footer b{color:var(--m)}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--m);outline-offset:3px}
+  .btn{font:10px var(--px);padding:12px 14px;border:2px solid var(--v);background:transparent;color:var(--v);cursor:pointer;display:inline-block}
+  .btn.go{background:var(--m);border-color:var(--m);color:var(--bg)}
+  .btn:hover{box-shadow:3px 3px 0 var(--v)}
+  .btn.go:hover{box-shadow:3px 3px 0 var(--v)}
+  .btn:disabled{opacity:.45;cursor:default;box-shadow:none}
+  .btn.wide{width:100%;text-align:center}
+  .game-box{margin-top:16px;padding:18px 14px;border:2px dashed var(--l);background:var(--s2);text-align:center}
+  .game-display{font:22px/1.6 var(--px);color:#fff;min-height:38px;letter-spacing:4px;word-break:break-all}
+  .game-display.small{font-size:15px;letter-spacing:1px}
+  .game-msg{font:10px/1.8 var(--px);color:var(--mu);min-height:20px;margin-top:10px}
+  .game-msg.good{color:var(--m)}
+  .game-msg.bad{color:#ff7a7a}
+  .game-score{font:10px/1.8 var(--px);color:var(--v);margin-top:8px}
+  .game-score b{color:var(--m)}
+  .game-controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+  .game-controls .btn{flex:1 1 auto}
+  .game-input{width:100%;max-width:280px;margin:12px auto 0;display:block;padding:12px 14px;font:16px var(--px);letter-spacing:6px;text-align:center;color:#fff;background:var(--bg);border:2px solid var(--v);outline:none}
+  .game-input:focus{border-color:var(--m)}
+  .science{margin:16px 0 0;padding:12px 14px;border-left:3px solid var(--m);background:var(--s2);font-size:13px;color:var(--mu)}
+  .science b{color:var(--t)}
+  .react-pad{cursor:pointer;user-select:none;-webkit-user-select:none;min-height:120px;display:flex;align-items:center;justify-content:center;font:16px/1.6 var(--px);color:#fff}
+  .react-pad.wait{background:#3a1220;border:2px solid #ff7a7a}
+  .react-pad.ready{background:#0d3d24;border:2px solid var(--m)}
+  .crumb{font:9px var(--px);color:var(--mu);margin:0 0 14px}
+  .crumb a{color:var(--v)}
+  .page-title{font:13px/1.6 var(--px);margin:0 0 6px;color:var(--m)}
+  @media(max-width:640px){
+    body{font-size:14.5px;line-height:1.75}
+    .wrap{padding:14px 14px 44px}
+    .bar-top{flex-direction:column;padding:14px;gap:14px;box-shadow:3px 3px 0 var(--m)}
+    .logo{font-size:13px}
+    nav{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+    nav a{text-align:center;padding:12px 6px}
+    .page{margin-top:20px}
+    .win{box-shadow:4px 4px 0 rgba(88,246,177,.9);margin-bottom:20px}
+    .win-b{padding:16px}
+    h1{font-size:16px}
+    h3{font-size:15px}
+    .grid{gap:18px}
+    .note{font-size:13px;padding:12px 14px}
+    .win-t{font-size:8px}
+    .win-t span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .btn{display:block;text-align:center;margin:8px 0 0}
+    .game-controls .btn{flex:1 1 40%}
+    .game-display{font-size:18px}
+    .react-pad{font-size:13px;min-height:100px}
+    body{overflow-x:hidden}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar-top">
+    <div class="logo px">BRAINPING<i>.</i>EXE</div>
+    <nav aria-label="Main">
+      <a href="../index.html">HOME</a><a href="../blog/">BLOG</a><a href="../workshops/">WORKSHOPS</a><a href="../resume/">RESUME</a><a href="../contact/">CONTACT</a><a href="../brain-gym/" class="on">BRAIN GYM</a>
+    </nav>
+  </header>
+  <main>
+<div class="page" style="margin-top:26px"><p class="crumb"><a href="../index.html">HOME</a> &gt; BRAIN GYM</p>
+<h1 class="page-title">&gt; BRAIN GYM</h1>
+    <div class="win"><div class="win-t"><span>C:\BRAINPING\BRAIN_GYM.EXE</span><span>_ □ ×</span></div>
+      <div class="win-b">
+        <h1>Train your brain<span class="cur"></span></h1>
+        <p class="mu" style="margin:0">Three short games, two minutes each. No sign-up, no leaderboard against strangers — just you against your own best score. Your best results are saved in your browser, so you can come back tomorrow and beat them.</p>
+        <p class="mu" style="margin:10px 0 0">Each game trains something real, and each one tells you the science behind it. That is the whole point of BrainPing: play a little, understand a little more.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- GAME 1: NUMBER MEMORY -->
+      <section class="win"><div class="win-t"><span>MEMORY.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>WORKING MEMORY</span><span id="mem-best">BEST: —</span></div>
+        <h3>Number Memory</h3>
+        <p class="mu">A sequence of digits flashes on screen. Memorise it, then type it back. Each level adds one more digit. How far can you go?</p>
+        <div class="game-box">
+          <div class="game-display" id="mem-display">READY?</div>
+          <div class="game-msg" id="mem-msg">Press START. Level 1 starts with 3 digits.</div>
+          <input class="game-input" id="mem-input" type="text" inputmode="numeric" autocomplete="off" placeholder="???" disabled>
+          <div class="game-controls">
+            <button class="btn go" id="mem-start" type="button">START &gt;</button>
+            <button class="btn" id="mem-check" type="button" disabled>CHECK</button>
+          </div>
+          <div class="game-score" id="mem-score">LEVEL: —</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> this is your working memory — the mental notepad that holds a phone number while you dial it. Most people hold about 7 items at once. Training it helps with focus, reading, and following multi-step instructions at work.</p>
+      </div></section>
+
+      <!-- GAME 2: STROOP -->
+      <section class="win"><div class="win-t"><span>STROOP.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>ATTENTION</span><span id="stroop-best">BEST: —</span></div>
+        <h3>Stroop Test</h3>
+        <p class="mu">A colour word appears — but printed in a different colour. Click the button that matches the <b style="color:var(--t)">ink colour</b>, not the word. 10 rounds. Fast and right beats fast and wrong.</p>
+        <div class="game-box">
+          <div class="game-display" id="stroop-display">READY?</div>
+          <div class="game-msg" id="stroop-msg">Press START. 10 rounds, click the ink colour.</div>
+          <div class="game-controls" id="stroop-buttons">
+            <button class="btn" type="button" data-color="RED">RED</button>
+            <button class="btn" type="button" data-color="GREEN">GREEN</button>
+            <button class="btn" type="button" data-color="BLUE">BLUE</button>
+            <button class="btn" type="button" data-color="YELLOW">YELLOW</button>
+          </div>
+          <div class="game-controls">
+            <button class="btn go" id="stroop-start" type="button">START &gt;</button>
+          </div>
+          <div class="game-score" id="stroop-score">ROUND: — &nbsp;·&nbsp; SCORE: —</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> your brain reads the word automatically, so naming the ink colour takes real effort — that is the Stroop effect. It measures selective attention: the same skill you use to ignore notifications and stay on one task.</p>
+      </div></section>
+
+      <!-- GAME 3: REACTION -->
+      <section class="win"><div class="win-t"><span>REACTION.EXE</span><span>×</span></div><div class="win-b">
+        <div class="meta"><span>PROCESSING SPEED</span><span id="react-best">BEST: —</span></div>
+        <h3>Reaction Test</h3>
+        <p class="mu">Press START, wait for the pad to turn green, then click as fast as you can. 5 rounds — your average time is your score. Click too early and the round does not count.</p>
+        <div class="game-box">
+          <div class="react-pad wait" id="react-pad">PRESS START</div>
+          <div class="game-msg" id="react-msg">5 rounds. Average reaction time wins.</div>
+          <div class="game-controls">
+            <button class="btn go" id="react-start" type="button">START &gt;</button>
+          </div>
+          <div class="game-score" id="react-score">ROUND: — &nbsp;·&nbsp; AVG: —</div>
+        </div>
+        <p class="science"><b>Why it matters:</b> reaction time reflects how fast your brain turns a signal into an action. It slows down with tiredness and distraction — so if your time is worse than usual today, that is data: your brain is asking for sleep, not for more coffee.</p>
+      </div></section>
+    </div>
+
+    <div class="note">Best scores live only in your browser — nothing is uploaded anywhere. Come back tomorrow and try to beat yourself. One small win a day is how brains change.</div>
+</div>
+  </main>
+  <footer>&gt; <b>PRESS ANY KEY TO CONTINUE</b><span class="cur" style="width:8px;height:12px"></span><br>© 2026 FATEMEH FARYABI · KERMAN, IRAN</footer>
+</div>
+<script>
+(function(){
+  "use strict";
+  function storeGet(key){
+    try { return window.localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function storeSet(key, value){
+    try { window.localStorage.setItem(key, String(value)); } catch (e) { /* private mode: scores just won't persist */ }
+  }
+  function setText(id, text){ document.getElementById(id).textContent = text; }
+  function setMsg(id, text, kind){
+    var el = document.getElementById(id);
+    el.textContent = text;
+    el.className = "game-msg" + (kind ? " " + kind : "");
+  }
+
+  /* ---------- GAME 1: NUMBER MEMORY ---------- */
+  var memLevel = 0, memSeq = "", memTimer = null;
+  var memBest = parseInt(storeGet("bp_mem_best") || "0", 10) || 0;
+  if (memBest > 0) setText("mem-best", "BEST: LEVEL " + memBest);
+  function memShowLevel(){
+    var digits = memLevel + 2; /* level 1 = 3 digits */
+    memSeq = "";
+    for (var i = 0; i < digits; i++) memSeq += String(Math.floor(Math.random() * 10));
+    var input = document.getElementById("mem-input");
+    input.value = ""; input.disabled = true;
+    document.getElementById("mem-check").disabled = true;
+    setText("mem-display", memSeq);
+    setText("mem-score", "LEVEL: " + memLevel);
+    setMsg("mem-msg", "Memorise these " + digits + " digits…");
+    clearTimeout(memTimer);
+    memTimer = setTimeout(function(){
+      setText("mem-display", "• • •");
+      setMsg("mem-msg", "Now type the digits and press CHECK.");
+      input.disabled = false; input.focus();
+      document.getElementById("mem-check").disabled = false;
+    }, 900 + digits * 700);
+  }
+  document.getElementById("mem-start").addEventListener("click", function(){
+    memLevel = 1;
+    setText("mem-display", "READY?");
+    memShowLevel();
+  });
+  function memCheck(){
+    var input = document.getElementById("mem-input");
+    var guess = input.value.replace(/\D/g, "");
+    if (guess.length !== memSeq.length) {
+      setMsg("mem-msg", "Type all " + memSeq.length + " digits first.", "bad");
+      return;
+    }
+    if (guess === memSeq) {
+      setMsg("mem-msg", "Correct! One more digit next level.", "good");
+      if (memLevel > memBest) {
+        memBest = memLevel;
+        storeSet("bp_mem_best", memBest);
+        setText("mem-best", "BEST: LEVEL " + memBest);
+      }
+      memLevel++;
+      clearTimeout(memTimer);
+      memTimer = setTimeout(memShowLevel, 1200);
+    } else {
+      clearTimeout(memTimer);
+      setText("mem-display", memSeq);
+      setMsg("mem-msg", "Not quite — the answer was " + memSeq + ". You reached level " + memLevel + ". Press START to try again.", "bad");
+      setText("mem-score", "LEVEL: " + memLevel + " — GAME OVER");
+      input.disabled = true;
+      document.getElementById("mem-check").disabled = true;
+    }
+  }
+  document.getElementById("mem-check").addEventListener("click", memCheck);
+  document.getElementById("mem-input").addEventListener("keydown", function(e){
+    if (e.key === "Enter") memCheck();
+  });
+
+  /* ---------- GAME 2: STROOP ---------- */
+  var COLORS = [
+    { name: "RED", hex: "#ff5f5f" },
+    { name: "GREEN", hex: "#58F6B1" },
+    { name: "BLUE", hex: "#6ea8fe" },
+    { name: "YELLOW", hex: "#ffd84d" }
+  ];
+  var stroopRound = 0, stroopScore = 0, stroopInk = null, stroopActive = false;
+  var stroopBest = parseInt(storeGet("bp_stroop_best") || "0", 10) || 0;
+  if (stroopBest > 0) setText("stroop-best", "BEST: " + stroopBest + "/10");
+  function stroopNext(){
+    if (stroopRound >= 10) {
+      stroopActive = false;
+      setText("stroop-display", stroopScore + " / 10");
+      setMsg("stroop-msg", stroopScore >= 8 ? "Excellent focus! Press START to play again." : "Good effort — press START to try again.", stroopScore >= 8 ? "good" : "");
+      setText("stroop-score", "ROUND: 10/10 · SCORE: " + stroopScore);
+      if (stroopScore > stroopBest) {
+        stroopBest = stroopScore;
+        storeSet("bp_stroop_best", stroopBest);
+        setText("stroop-best", "BEST: " + stroopBest + "/10");
+      }
+      return;
+    }
+    stroopRound++;
+    var word = COLORS[Math.floor(Math.random() * COLORS.length)];
+    var ink = COLORS[Math.floor(Math.random() * COLORS.length)];
+    if (ink.name === word.name) ink = COLORS[(COLORS.indexOf(ink) + 1) % COLORS.length];
+    stroopInk = ink.name;
+    var disp = document.getElementById("stroop-display");
+    disp.textContent = word.name;
+    disp.style.color = ink.hex;
+    setText("stroop-score", "ROUND: " + stroopRound + "/10 · SCORE: " + stroopScore);
+    setMsg("stroop-msg", "Click the INK colour, not the word.");
+  }
+  document.getElementById("stroop-start").addEventListener("click", function(){
+    stroopRound = 0; stroopScore = 0; stroopActive = true;
+    stroopNext();
+  });
+  document.querySelectorAll("#stroop-buttons .btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (!stroopActive) return;
+      if (btn.getAttribute("data-color") === stroopInk) {
+        stroopScore++;
+        setMsg("stroop-msg", "Right!", "good");
+      } else {
+        setMsg("stroop-msg", "Wrong — the ink was " + stroopInk + ".", "bad");
+      }
+      setText("stroop-score", "ROUND: " + stroopRound + "/10 · SCORE: " + stroopScore);
+      stroopNext();
+    });
+  });
+
+  /* ---------- GAME 3: REACTION ---------- */
+  var reactState = "idle", reactTimer = null, reactStart = 0, reactTimes = [];
+  var reactBest = parseInt(storeGet("bp_react_best") || "0", 10) || 0;
+  if (reactBest > 0) setText("react-best", "BEST AVG: " + reactBest + " MS");
+  var pad = document.getElementById("react-pad");
+  function reactAvg(){
+    var sum = 0;
+    for (var i = 0; i < reactTimes.length; i++) sum += reactTimes[i];
+    return Math.round(sum / reactTimes.length);
+  }
+  function reactEnd(){
+    reactState = "idle";
+    pad.className = "react-pad wait";
+    pad.textContent = "DONE — PRESS START";
+    var avg = reactAvg();
+    setMsg("react-msg", "Average: " + avg + " ms over 5 rounds. Under 250 ms is quick; under 200 ms is very quick.", "good");
+    setText("react-score", "ROUND: 5/5 · AVG: " + avg + " MS");
+    if (reactBest === 0 || avg < reactBest) {
+      reactBest = avg;
+      storeSet("bp_react_best", reactBest);
+      setText("react-best", "BEST AVG: " + reactBest + " MS");
+    }
+  }
+  document.getElementById("react-start").addEventListener("click", function(){
+    clearTimeout(reactTimer);
+    reactTimes = [];
+    reactState = "waiting";
+    pad.className = "react-pad wait";
+    pad.textContent = "WAIT FOR GREEN…";
+    setMsg("react-msg", "Wait… do not click yet.");
+    setText("react-score", "ROUND: 1/5 · AVG: —");
+    reactTimer = setTimeout(function(){
+      reactState = "ready";
+      reactStart = Date.now();
+      pad.className = "react-pad ready";
+      pad.textContent = "CLICK!";
+    }, 1500 + Math.random() * 2500);
+  });
+  pad.addEventListener("click", function(){
+    if (reactState === "waiting") {
+      clearTimeout(reactTimer);
+      reactState = "idle";
+      pad.textContent = "TOO SOON!";
+      setMsg("react-msg", "Too soon — that round does not count. Press START to try again.", "bad");
+    } else if (reactState === "ready") {
+      var ms = Date.now() - reactStart;
+      reactTimes.push(ms);
+      setText("react-score", "ROUND: " + reactTimes.length + "/5 · AVG: " + reactAvg() + " MS");
+      if (reactTimes.length >= 5) {
+        reactEnd();
+      } else {
+        reactState = "waiting";
+        pad.className = "react-pad wait";
+        pad.textContent = "WAIT FOR GREEN…";
+        setMsg("react-msg", "Round " + reactTimes.length + ": " + ms + " ms. Get ready…");
+        reactTimer = setTimeout(function(){
+          reactState = "ready";
+          reactStart = Date.now();
+          pad.className = "react-pad ready";
+          pad.textContent = "CLICK!";
+        }, 1200 + Math.random() * 2200);
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
